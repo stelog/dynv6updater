@@ -1,0 +1,7 @@
+[Unit]
+Description=Script to check for changed ip addresses and update at dyndns services
+
+[Service]
+Type=oneshot
+EnvironmentFile=/usr/local/lib/systemd/system/dynv6.env
+ExecStart=/usr/local/bin/dynv6.sh ${DOMAIN1} ${INTERFACE} ${TOKEN}

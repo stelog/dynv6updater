@@ -1,0 +1,15 @@
+[Unit]
+Description=Timer which periodically check for changed IP addresses
+Wants=network-online.target
+After=network-online.target
+
+[Timer]
+# call timer 5 minutes
+# DayOfWeek Year-Month-Day Hour:Minute:Second
+OnBootSec=1min
+OnCalendar=*:0/5
+Persistent=true
+Unit=dynv6.service
+
+[Install]
+WantedBy=timers.target
