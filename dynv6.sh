@@ -14,8 +14,8 @@
 hostname=$1
 device=$2
 token=$3
-file_ipv6=/tmp/dynv6.addr6
-file_ipv4=/tmp/dynv6.addr4
+file_ipv6=/tmp/${hostname}.addr6
+file_ipv4=/tmp/${hostname}.addr4
 
 [ -e $file_ipv6 ] && old_ipv6=`cat $file_ipv6`
 [ -e $file_ipv4 ] && old_ipv4=`cat $file_ipv4`
